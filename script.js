@@ -9,8 +9,8 @@ const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbwKfOAWrSYBm9AdFqGb4
 // =========================
 
 const vendedores = [
-    { nome: "João Silva", supervisor: "Carlos Oliveira" },
-    { nome: "José Santos", supervisor: "Carlos Oliveira" },
+    { nome: "Ingrid Santos", supervisor: "Marlisson" },
+    { nome: "Warley", supervisor: "Carlos Bruno" },
     { nome: "Pedro Alves", supervisor: "Fernanda Lima" },
     { nome: "Lucas Pereira", supervisor: "Fernanda Lima" },
     { nome: "Maria Souza", supervisor: "Ricardo Gomes" },
