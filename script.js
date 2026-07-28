@@ -2,7 +2,7 @@
 // URL DO APPS SCRIPT
 // =========================
 
-const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbwCKVVSGW3RPbj9WJCc0vmV0xy3x1NGLiELsxByjqjd6j7iW5TVIQQZjsgc4mZipqdD/exec";
+const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbwKfOAWrSYBm9AdFqGb4XxNOiqnHOGFUcgWSIN3X99Akic97PilyktEXzkn3kpRdnqL/exec";
 
 // =========================
 // VENDEDORES
@@ -21,14 +21,102 @@ const vendedores = [
     { nome: "Fernanda Rocha", supervisor: "Marcelo Alves" }
 ];
 
+// =========================
+// ELEMENTOS
+// =========================
+
 const pesquisa = document.getElementById("pesquisa");
 const lista = document.getElementById("listaVendedores");
 const supervisor = document.getElementById("supervisor");
 
+const datasContainer = document.getElementById("datasPrevisao");
+
+const camposKg = document.querySelectorAll(".kg");
+
+const total = document.getElementById("totalKg");
+
 let vendedorSelecionado = "";
 
+let dataSelecionada = "";
+
 // =========================
-// PESQUISA
+// DATAS DA PREVISÃO
+// =========================
+
+function carregarDatas() {
+
+    datasContainer.innerHTML = "";
+
+    const diasSemana = [
+        "Domingo",
+        "Segunda",
+        "Terça",
+        "Quarta",
+        "Quinta",
+        "Sexta",
+        "Sábado"
+    ];
+
+    for (let i = 1; i <= 3; i++) {
+
+        const data = new Date();
+
+        data.setDate(data.getDate() + i);
+
+        const dia = String(data.getDate()).padStart(2, "0");
+
+        const mes = String(data.getMonth() + 1).padStart(2, "0");
+
+        const ano = data.getFullYear();
+
+        const valor = `${ano}-${mes}-${dia}`;
+
+        const card = document.createElement("div");
+
+        card.className = "data-card";
+
+        card.innerHTML = `
+
+            <div class="dia">
+
+                ${i === 1 ? "Amanhã" : diasSemana[data.getDay()]}
+
+            </div>
+
+            <div class="data">
+
+                ${dia}/${mes}
+
+            </div>
+
+        `;
+
+        card.onclick = () => {
+
+            document
+                .querySelectorAll(".data-card")
+                .forEach(c => c.classList.remove("selecionado"));
+
+            card.classList.add("selecionado");
+
+            dataSelecionada = valor;
+
+        };
+
+        datasContainer.appendChild(card);
+
+    }
+
+    if (datasContainer.firstChild) {
+        datasContainer.firstChild.click();
+    }
+
+}
+
+carregarDatas();
+
+// =========================
+// PESQUISA DE VENDEDOR
 // =========================
 
 pesquisa.addEventListener("input", () => {
@@ -37,9 +125,12 @@ pesquisa.addEventListener("input", () => {
 
     lista.innerHTML = "";
 
-    if(texto === ""){
+    if (texto === "") {
+
         lista.style.display = "none";
+
         return;
+
     }
 
     vendedores
@@ -76,34 +167,39 @@ pesquisa.addEventListener("input", () => {
 // TOTAL
 // =========================
 
-const camposKg = document.querySelectorAll(".kg");
-const total = document.getElementById("totalKg");
-
 camposKg.forEach(campo => {
+
     campo.addEventListener("input", calcularTotal);
+
 });
 
-function calcularTotal(){
+function calcularTotal() {
 
     let soma = 0;
 
     camposKg.forEach(c => {
+
         soma += Number(c.value) || 0;
+
     });
 
     total.textContent = soma + " KG";
 
 }
 
+calcularTotal();
+
 // =========================
-// ENVIAR
+// ENVIAR DADOS
 // =========================
 
-document.getElementById("enviar").addEventListener("click", enviarDados);
+document
+    .getElementById("enviar")
+    .addEventListener("click", enviarDados);
 
-async function enviarDados(){
+async function enviarDados() {
 
-    if(vendedorSelecionado === ""){
+    if (vendedorSelecionado === "") {
 
         alert("Selecione um vendedor.");
 
@@ -111,29 +207,39 @@ async function enviarDados(){
 
     }
 
+    if (dataSelecionada === "") {
+
+        alert("Selecione a data da previsão.");
+
+        return;
+
+    }
+
     const dados = {
+
+        dataPrevisao: dataSelecionada,
 
         vendedor: vendedorSelecionado,
 
         supervisor: supervisor.textContent,
 
-        bebidaLactea: camposKg[0].value || 0,
+        bebidaLactea: Number(camposKg[0].value) || 0,
 
-        bisnagasFood: camposKg[1].value || 0,
+        bisnagasFood: Number(camposKg[1].value) || 0,
 
-        copinhos: camposKg[2].value || 0,
+        copinhos: Number(camposKg[2].value) || 0,
 
-        cremosos: camposKg[3].value || 0,
+        cremosos: Number(camposKg[3].value) || 0,
 
-        iogurtes: camposKg[4].value || 0,
+        iogurtes: Number(camposKg[4].value) || 0,
 
-        leitePasteurizado: camposKg[5].value || 0,
+        leitePasteurizado: Number(camposKg[5].value) || 0,
 
-        queijos: camposKg[6].value || 0,
+        queijos: Number(camposKg[6].value) || 0,
 
-        requeijoes: camposKg[7].value || 0,
+        requeijoes: Number(camposKg[7].value) || 0,
 
-        total: total.textContent.replace(" KG","")
+        total: Number(total.textContent.replace(" KG", ""))
 
     };
 
@@ -141,21 +247,31 @@ async function enviarDados(){
 
     botao.disabled = true;
 
-    botao.innerText = "Enviando...";
+    botao.innerText = "ENVIANDO...";
 
-    try{
+    try {
 
-        await fetch(URL_SCRIPT,{
+        const resposta = await fetch(URL_SCRIPT, {
 
-            method:"POST",
+            method: "POST",
 
-            headers:{
-                "Content-Type":"text/plain;charset=utf-8"
+            headers: {
+
+                "Content-Type": "text/plain;charset=utf-8"
+
             },
 
-            body:JSON.stringify(dados)
+            body: JSON.stringify(dados)
 
         });
+
+        const resultado = await resposta.json();
+
+        if (!resultado.sucesso) {
+
+            throw new Error(resultado.erro);
+
+        }
 
         alert("✅ Previsão enviada com sucesso!");
 
@@ -165,15 +281,17 @@ async function enviarDados(){
 
         vendedorSelecionado = "";
 
-        camposKg.forEach(c => c.value="");
+        camposKg.forEach(campo => campo.value = "");
 
         calcularTotal();
 
-    }catch(e){
+        carregarDatas();
 
-        alert("Erro ao enviar.\n\n"+e);
+    } catch (erro) {
 
-        console.error(e);
+        console.error(erro);
+
+        alert("Erro ao enviar a previsão.\n\n" + erro.message);
 
     }
 
