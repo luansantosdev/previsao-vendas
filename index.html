@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Previsão de Vendas</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <img src="img/logo_saborevida.png" class="logo">
+
+        <h1>Previsão de Vendas</h1>
+
+        <p class="subtitulo">
+            Informe sua previsão de vendas para amanhã
+        </p>
+
+        <div class="grupo">
+
+            <label>Pesquisar vendedor</label>
+
+            <input
+                type="text"
+                id="pesquisa"
+                placeholder="Digite seu nome..."
+                autocomplete="off">
+
+            <div id="listaVendedores"></div>
+
+        </div>
+
+        <div class="grupo">
+
+            <label>Supervisor</label>
+
+            <div class="supervisor" id="supervisor">
+                -
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="categoria">
+
+            <label>Bebida Láctea</label>
+
+            <input type="number" class="kg" placeholder="0">
+
+        </div>
+
+        <div class="categoria">
+
+            <label>Bisnagas / Food</label>
+
+            <input type="number" class="kg" placeholder="0">
+
+        </div>
+
+        <div class="categoria">
+
+            <label>Copinhos</label>
+
+            <input type="number" class="kg" placeholder="0">
+
+        </div>
+
+        <div class="categoria">
+
+            <label>Cremosos</label>
+
+            <input type="number" class="kg" placeholder="0">
+
+        </div>
+
+        <div class="categoria">
+
+            <label>Iogurtes</label>
+
+            <input type="number" class="kg" placeholder="0">
+
+        </div>
+
+        <div class="categoria">
+
+            <label>Leite Pasteurizado</label>
+
+            <input type="number" class="kg" placeholder="0">
+
+        </div>
+
+        <div class="categoria">
+
+            <label>Queijos</label>
+
+            <input type="number" class="kg" placeholder="0">
+
+        </div>
+
+        <div class="categoria">
+
+            <label>Requeijões</label>
+
+            <input type="number" class="kg" placeholder="0">
+
+        </div>
+
+        <div class="total">
+
+            <span>Total Previsto</span>
+
+            <h2 id="totalKg">
+
+                0 KG
+
+            </h2>
+
+        </div>
+
+        <button id="enviar">
+
+            ENVIAR PREVISÃO
+
+        </button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
