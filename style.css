@@ -4,6 +4,7 @@
     box-sizing:border-box;
 }
 
+
 body{
 
     font-family:'Poppins',sans-serif;
@@ -22,6 +23,7 @@ body{
 
 }
 
+
 .container{
 
     width:100%;
@@ -31,6 +33,7 @@ body{
     justify-content:center;
 
 }
+
 
 .card{
 
@@ -50,6 +53,7 @@ body{
 
 }
 
+
 .logo{
 
     width:220px;
@@ -62,6 +66,7 @@ body{
 
 }
 
+
 h1{
 
     color:#24356F;
@@ -71,6 +76,7 @@ h1{
     font-size:30px;
 
 }
+
 
 .subtitulo{
 
@@ -84,11 +90,13 @@ h1{
 
 }
 
+
 .grupo{
 
     margin-bottom:22px;
 
 }
+
 
 .grupo label{
 
@@ -101,6 +109,7 @@ h1{
     margin-bottom:8px;
 
 }
+
 
 input{
 
@@ -118,6 +127,7 @@ input{
 
 }
 
+
 input:focus{
 
     outline:none;
@@ -127,6 +137,7 @@ input:focus{
     box-shadow:0 0 10px rgba(0,114,188,.25);
 
 }
+
 
 .supervisor{
 
@@ -142,6 +153,7 @@ input:focus{
 
 }
 
+
 hr{
 
     border:none;
@@ -151,6 +163,7 @@ hr{
     margin:30px 0;
 
 }
+
 
 .categoria{
 
@@ -166,6 +179,7 @@ hr{
 
 }
 
+
 .categoria label{
 
     flex:1;
@@ -176,6 +190,7 @@ hr{
 
 }
 
+
 .categoria input{
 
     width:130px;
@@ -183,6 +198,7 @@ hr{
     text-align:center;
 
 }
+
 
 .total{
 
@@ -202,6 +218,7 @@ hr{
 
 }
 
+
 .total span{
 
     font-size:14px;
@@ -209,6 +226,7 @@ hr{
     opacity:.8;
 
 }
+
 
 .total h2{
 
@@ -219,6 +237,7 @@ hr{
     color:#F9BE24;
 
 }
+
 
 button{
 
@@ -244,6 +263,7 @@ button{
 
 }
 
+
 button:hover{
 
     background:#005D99;
@@ -251,6 +271,7 @@ button:hover{
     transform:translateY(-2px);
 
 }
+
 
 #listaVendedores{
 
@@ -272,6 +293,7 @@ button:hover{
 
 }
 
+
 .item{
 
     padding:14px;
@@ -282,6 +304,7 @@ button:hover{
 
 }
 
+
 .item:hover{
 
     background:#0072BC;
@@ -289,6 +312,92 @@ button:hover{
     color:white;
 
 }
+
+
+/* ==========================
+   DATAS DA PREVISÃO
+========================== */
+
+
+.datas-previsao{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:12px;
+
+    margin-top:10px;
+
+}
+
+
+
+.data-card{
+
+    background:#fff;
+
+    border:2px solid #d9d9d9;
+
+    border-radius:14px;
+
+    padding:18px 10px;
+
+    cursor:pointer;
+
+    text-align:center;
+
+    transition:.25s;
+
+    user-select:none;
+
+}
+
+
+
+.data-card:hover{
+
+    border-color:#0072BC;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+.data-card.selecionado{
+
+    background:#0072BC;
+
+    border-color:#0072BC;
+
+    color:#fff;
+
+}
+
+
+
+.data-card .dia{
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+
+
+.data-card .data{
+
+    font-size:20px;
+
+    font-weight:700;
+
+    margin-top:8px;
+
+}
+
+
 
 @keyframes fade{
 
@@ -310,38 +419,55 @@ button:hover{
 
 }
 
+
+
 @media(max-width:650px){
+
 
 .card{
 
-padding:25px;
+    padding:25px;
 
 }
+
 
 .logo{
 
-width:180px;
+    width:180px;
 
 }
+
 
 h1{
 
-font-size:24px;
+    font-size:24px;
 
 }
+
 
 .categoria{
 
-flex-direction:column;
+    flex-direction:column;
 
-align-items:stretch;
+    align-items:stretch;
 
 }
+
 
 .categoria input{
 
-width:100%;
+    width:100%;
 
 }
+
+
+/* DATAS NO CELULAR */
+
+.datas-previsao{
+
+    grid-template-columns:1fr;
+
+}
+
 
 }
