@@ -2,23 +2,51 @@
 // URL DO APPS SCRIPT
 // =========================
 
-const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbwKfOAWrSYBm9AdFqGb4XxNOiqnHOGFUcgWSIN3X99Akic97PilyktEXzkn3kpRdnqL/exec";
-
+const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbysggwlj5RQ96ut3CMo0UCPsr5VrGoDykfDhZ2zZD4jmWggcLo47fkevPfXgObIqM_m/exec";
+                                            
 // =========================
 // VENDEDORES
 // =========================
 
 const vendedores = [
-    { nome: "Ingrid Santos", supervisor: "Marlisson" },
-    { nome: "Warley", supervisor: "Carlos Bruno" },
-    { nome: "Pedro Alves", supervisor: "Fernanda Lima" },
-    { nome: "Lucas Pereira", supervisor: "Fernanda Lima" },
-    { nome: "Maria Souza", supervisor: "Ricardo Gomes" },
-    { nome: "Ana Costa", supervisor: "Ricardo Gomes" },
-    { nome: "Bruno Martins", supervisor: "Patrícia Rocha" },
-    { nome: "Carla Mendes", supervisor: "Patrícia Rocha" },
-    { nome: "Eduardo Lima", supervisor: "Marcelo Alves" },
-    { nome: "Fernanda Rocha", supervisor: "Marcelo Alves" }
+    { nome: "BRENA ALEXSANDRA LIRA PAULINO", supervisor: "Carlos Bruno - SV" },
+    { nome: "FRANCISCO WARLEY DE AMORIM FARIAS", supervisor: "Carlos Bruno - SV" },
+    { nome: "GERENCIA DE VENDAS SABOR &VIDA", supervisor: "Carlos Bruno - SV" },
+
+    { nome: "ALANE GUEDES DE SOUSA", supervisor: "Carlos Ferreira - SV" },
+    { nome: "DEYVIANE NOBRE DA SILVA", supervisor: "Carlos Ferreira - SV" },
+    { nome: "FRANCISCO ANISIO FREIRES", supervisor: "Carlos Ferreira - SV" },
+    { nome: "FRANCISCO DE ASSIS DE OLIVEIRA LIMA", supervisor: "Carlos Ferreira - SV" },
+    { nome: "FRANCISCO ERICON DE SOUSA ALVES", supervisor: "Carlos Ferreira - SV" },
+    { nome: "ISAAC NASCIMENTO DA SILVA", supervisor: "Carlos Ferreira - SV" },
+    { nome: "JONATHAN XAVIER OLIVEIRA", supervisor: "Carlos Ferreira - SV" },
+    { nome: "JOSE EVANYELSON CORREIA DA SILVA", supervisor: "Carlos Ferreira - SV" },
+    { nome: "KEZIA CAVALCANTE DE SOUSA", supervisor: "Carlos Ferreira - SV" },
+    { nome: "NAHIM NOBREGA FERRAZ", supervisor: "Carlos Ferreira - SV" },
+
+    { nome: "DARLON HERBERT FERNANDES DIAS", supervisor: "Darlon Hebert - SV" },
+    { nome: "JAIANE SILVA GUEDES", supervisor: "Darlon Hebert - SV" },
+    { nome: "JOSE ROMARIO ALVES DA SILVA", supervisor: "Darlon Hebert - SV" },
+
+    { nome: "ANTONIA IZABELLE DINIZ PAIVA", supervisor: "Fernando Fernandes - SV" },
+    { nome: "EGBERTO PEREIRA PINTO", supervisor: "Fernando Fernandes - SV" },
+    { nome: "FRANCIS DE AZEVEDO DOS SANTOS", supervisor: "Fernando Fernandes - SV" },
+    { nome: "FRANCISCO EDUARDO BERNADINO DE LIMA", supervisor: "Fernando Fernandes - SV" },
+    { nome: "FRANCISCO LEANDRO GOMES", supervisor: "Fernando Fernandes - SV" },
+    { nome: "FRANCISCO MARIO SOUSA ALMEIDA", supervisor: "Fernando Fernandes - SV" },
+    { nome: "JOSE FERNANDO FERNADES DA CUNHA", supervisor: "Fernando Fernandes - SV" },
+    { nome: "JOSÉ TIAGO MATIAS FONSECA", supervisor: "Fernando Fernandes - SV" },
+    { nome: "JOSÉ WLADSON BARBOSA LINHARES", supervisor: "Fernando Fernandes - SV" },
+    { nome: "RENNER GONÇALVES DE ASSIS", supervisor: "Fernando Fernandes - SV" },
+    { nome: "THIAGO WITHE RODRIGUES", supervisor: "Fernando Fernandes - SV" },
+
+    { nome: "MIKAEL DA COSTA MIGUEL", supervisor: "Mikael Costa - SV" },
+
+    { nome: "ALEXANDRE ANTONIO ALBUQUERQUE AGUIA", supervisor: "Reinaldo Lima - SV" },
+    { nome: "ISABELLE DE SOUSA SILVA", supervisor: "Reinaldo Lima - SV" },
+    { nome: "JONH KAYRO MARINHO DOS SANTOS", supervisor: "Reinaldo Lima - SV" },
+    { nome: "MARIA MARCELA NUNES SILVESTRE", supervisor: "Reinaldo Lima - SV" },
+    { nome: "REINALDO DE SOUSA LIMA", supervisor: "Reinaldo Lima - SV" }
 ];
 
 // =========================
