@@ -2,8 +2,8 @@
 // URL DO APPS SCRIPT
 // =========================
 
-const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbysggwlj5RQ96ut3CMo0UCPsr5VrGoDykfDhZ2zZD4jmWggcLo47fkevPfXgObIqM_m/exec";
-                                            
+const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbzJsuKDuoOt0xMlhju4NY7vpGpkEAFdvBXmSIJBigKZ5bYO3MStr7UuQ3C41x9CdBa_/exec";
+                               
 // =========================
 // VENDEDORES
 // =========================
@@ -23,6 +23,7 @@ const vendedores = [
     { nome: "JOSE EVANYELSON CORREIA DA SILVA", supervisor: "Carlos Ferreira - SV" },
     { nome: "KEZIA CAVALCANTE DE SOUSA", supervisor: "Carlos Ferreira - SV" },
     { nome: "NAHIM NOBREGA FERRAZ", supervisor: "Carlos Ferreira - SV" },
+    { nome: "CARLOS FERREIRA", supervisor: "Carlos Ferreira - SV" },
 
     { nome: "DARLON HERBERT FERNANDES DIAS", supervisor: "Darlon Hebert - SV" },
     { nome: "JAIANE SILVA GUEDES", supervisor: "Darlon Hebert - SV" },
@@ -39,6 +40,7 @@ const vendedores = [
     { nome: "JOSÉ WLADSON BARBOSA LINHARES", supervisor: "Fernando Fernandes - SV" },
     { nome: "RENNER GONÇALVES DE ASSIS", supervisor: "Fernando Fernandes - SV" },
     { nome: "THIAGO WITHE RODRIGUES", supervisor: "Fernando Fernandes - SV" },
+    { nome: "FERNANDO FERNANDES", supervisor: "Fernando Fernandes - SV" },
 
     { nome: "MIKAEL DA COSTA MIGUEL", supervisor: "Mikael Costa - SV" },
 
@@ -46,7 +48,10 @@ const vendedores = [
     { nome: "ISABELLE DE SOUSA SILVA", supervisor: "Reinaldo Lima - SV" },
     { nome: "JONH KAYRO MARINHO DOS SANTOS", supervisor: "Reinaldo Lima - SV" },
     { nome: "MARIA MARCELA NUNES SILVESTRE", supervisor: "Reinaldo Lima - SV" },
-    { nome: "REINALDO DE SOUSA LIMA", supervisor: "Reinaldo Lima - SV" }
+    { nome: "REINALDO DE SOUSA LIMA", supervisor: "Reinaldo Lima - SV" },
+    { nome: "DAVI ROCHA", supervisor: "Reinaldo Lima - SV" },
+    { nome: "MARCOS PAULO", supervisor: "Reinaldo Lima - SV" },
+    { nome: "FRANCISCO RONATH", supervisor: "Reinaldo Lima - SV" }
 ];
 
 // =========================
