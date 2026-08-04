@@ -9,21 +9,23 @@ const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbzJsuKDuoOt0xMlhju4N
 // =========================
 
 const vendedores = [
+    { nome: "GERENCIA DE VENDAS SABOR &VIDA", supervisor: "Carlos Bruno - SV" },
     { nome: "BRENA ALEXSANDRA LIRA PAULINO", supervisor: "Carlos Bruno - SV" },
     { nome: "FRANCISCO WARLEY DE AMORIM FARIAS", supervisor: "Carlos Bruno - SV" },
-    { nome: "GERENCIA DE VENDAS SABOR &VIDA", supervisor: "Carlos Bruno - SV" },
+    { nome: "CARLOS BRUNO OLIVEIRA", supervisor: "Carlos Bruno - SV" },
 
     { nome: "ALANE GUEDES DE SOUSA", supervisor: "Carlos Ferreira - SV" },
+    { nome: "CARLOS HENRIQUE OLIVEIRA FERREIRA", supervisor: "Carlos Ferreira - SV" },
     { nome: "DEYVIANE NOBRE DA SILVA", supervisor: "Carlos Ferreira - SV" },
     { nome: "FRANCISCO ANISIO FREIRES", supervisor: "Carlos Ferreira - SV" },
     { nome: "FRANCISCO DE ASSIS DE OLIVEIRA LIMA", supervisor: "Carlos Ferreira - SV" },
     { nome: "FRANCISCO ERICON DE SOUSA ALVES", supervisor: "Carlos Ferreira - SV" },
     { nome: "ISAAC NASCIMENTO DA SILVA", supervisor: "Carlos Ferreira - SV" },
-    { nome: "JONATHAN XAVIER OLIVEIRA", supervisor: "Carlos Ferreira - SV" },
     { nome: "JOSE EVANYELSON CORREIA DA SILVA", supervisor: "Carlos Ferreira - SV" },
+    { nome: "JONATHAN XAVIER OLIVEIRA", supervisor: "Carlos Ferreira - SV" },
     { nome: "KEZIA CAVALCANTE DE SOUSA", supervisor: "Carlos Ferreira - SV" },
+    { nome: "MATHEUS RONNER DE OLIVEIRA GOMES", supervisor: "Carlos Ferreira - SV" },
     { nome: "NAHIM NOBREGA FERRAZ", supervisor: "Carlos Ferreira - SV" },
-    { nome: "CARLOS FERREIRA", supervisor: "Carlos Ferreira - SV" },
 
     { nome: "DARLON HERBERT FERNANDES DIAS", supervisor: "Darlon Hebert - SV" },
     { nome: "JAIANE SILVA GUEDES", supervisor: "Darlon Hebert - SV" },
@@ -40,20 +42,17 @@ const vendedores = [
     { nome: "JOSÉ WLADSON BARBOSA LINHARES", supervisor: "Fernando Fernandes - SV" },
     { nome: "RENNER GONÇALVES DE ASSIS", supervisor: "Fernando Fernandes - SV" },
     { nome: "THIAGO WITHE RODRIGUES", supervisor: "Fernando Fernandes - SV" },
-    { nome: "FERNANDO FERNANDES", supervisor: "Fernando Fernandes - SV" },
 
     { nome: "MIKAEL DA COSTA MIGUEL", supervisor: "Mikael Costa - SV" },
 
     { nome: "ALEXANDRE ANTONIO ALBUQUERQUE AGUIA", supervisor: "Reinaldo Lima - SV" },
-    { nome: "ISABELLE DE SOUSA SILVA", supervisor: "Reinaldo Lima - SV" },
+    { nome: "DAVI ROCHA DA SILVA", supervisor: "Reinaldo Lima - SV" },
+    { nome: "FRANCISCO RONATH PEREIRA DE SOUSA", supervisor: "Reinaldo Lima - SV" },
     { nome: "JONH KAYRO MARINHO DOS SANTOS", supervisor: "Reinaldo Lima - SV" },
+    { nome: "MARCOS PAULO VASCONCELOS GARCIA", supervisor: "Reinaldo Lima - SV" },
     { nome: "MARIA MARCELA NUNES SILVESTRE", supervisor: "Reinaldo Lima - SV" },
-    { nome: "REINALDO DE SOUSA LIMA", supervisor: "Reinaldo Lima - SV" },
-    { nome: "DAVI ROCHA", supervisor: "Reinaldo Lima - SV" },
-    { nome: "MARCOS PAULO", supervisor: "Reinaldo Lima - SV" },
-    { nome: "FRANCISCO RONATH", supervisor: "Reinaldo Lima - SV" }
+    { nome: "REINALDO DE SOUSA LIMA", supervisor: "Reinaldo Lima - SV" }
 ];
-
 // =========================
 // ELEMENTOS
 // =========================
