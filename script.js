@@ -42,6 +42,7 @@ const vendedores = [
     { nome: "JOSÉ WLADSON BARBOSA LINHARES", supervisor: "Fernando Fernandes - SV" },
     { nome: "RENNER GONÇALVES DE ASSIS", supervisor: "Fernando Fernandes - SV" },
     { nome: "THIAGO WITHE RODRIGUES", supervisor: "Fernando Fernandes - SV" },
+    { nome: "MATHEUS RONNER DE OLIVEIRA GOMES", supervisor: "Fernando Fernandes - SV"},
 
     { nome: "MIKAEL DA COSTA MIGUEL", supervisor: "Mikael Costa - SV" },
 
