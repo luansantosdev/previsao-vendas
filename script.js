@@ -3,7 +3,7 @@
 // =========================
 
 const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbzJsuKDuoOt0xMlhju4NY7vpGpkEAFdvBXmSIJBigKZ5bYO3MStr7UuQ3C41x9CdBa_/exec";
-                               
+
 // =========================
 // VENDEDORES
 // =========================
@@ -37,12 +37,13 @@ const vendedores = [
     { nome: "FRANCISCO EDUARDO BERNADINO DE LIMA", supervisor: "Fernando Fernandes - SV" },
     { nome: "FRANCISCO LEANDRO GOMES", supervisor: "Fernando Fernandes - SV" },
     { nome: "FRANCISCO MARIO SOUSA ALMEIDA", supervisor: "Fernando Fernandes - SV" },
+    { nome: "FRANCISCO RUBENS CAVALCANTE DA SILVA", supervisor: "Fernando Fernandes - SV" },
     { nome: "JOSE FERNANDO FERNADES DA CUNHA", supervisor: "Fernando Fernandes - SV" },
     { nome: "JOSÉ TIAGO MATIAS FONSECA", supervisor: "Fernando Fernandes - SV" },
     { nome: "JOSÉ WLADSON BARBOSA LINHARES", supervisor: "Fernando Fernandes - SV" },
     { nome: "RENNER GONÇALVES DE ASSIS", supervisor: "Fernando Fernandes - SV" },
     { nome: "THIAGO WITHE RODRIGUES", supervisor: "Fernando Fernandes - SV" },
-    { nome: "ANTONIO GABRIEL MONTEIRO BRAGA", supervisor: "Fernando Fernandes - SV"},
+    { nome: "ANTONIO GABRIEL MONTEIRO BRAGA", supervisor: "Fernando Fernandes - SV" },
 
     { nome: "MIKAEL DA COSTA MIGUEL", supervisor: "Mikael Costa - SV" },
 
@@ -54,6 +55,7 @@ const vendedores = [
     { nome: "MARIA MARCELA NUNES SILVESTRE", supervisor: "Reinaldo Lima - SV" },
     { nome: "REINALDO DE SOUSA LIMA", supervisor: "Reinaldo Lima - SV" }
 ];
+
 // =========================
 // ELEMENTOS
 // =========================
@@ -73,8 +75,31 @@ let vendedorSelecionado = "";
 let dataSelecionada = "";
 
 // =========================
-// DATAS DA PREVISÃO
+// DATA DA PREVISÃO
 // =========================
+// Sempre o próximo dia útil:
+// - Segunda a quinta -> dia seguinte
+// - Sexta            -> segunda-feira (+3 dias)
+// - Sábado           -> segunda-feira (+2 dias)
+// - Domingo          -> segunda-feira (+1 dia)
+
+function proximaDataPrevisao() {
+
+    const data = new Date();
+
+    const diaSemana = data.getDay(); // 0 = domingo ... 5 = sexta, 6 = sábado
+
+    let diasParaSomar = 1;
+
+    if (diaSemana === 5) diasParaSomar = 3; // sexta -> segunda
+
+    if (diaSemana === 6) diasParaSomar = 2; // sábado -> segunda
+
+    data.setDate(data.getDate() + diasParaSomar);
+
+    return { data, diasParaSomar };
+
+}
 
 function carregarDatas() {
 
@@ -90,59 +115,42 @@ function carregarDatas() {
         "Sábado"
     ];
 
-    for (let i = 1; i <= 3; i++) {
+    const { data, diasParaSomar } = proximaDataPrevisao();
 
-        const data = new Date();
+    const dia = String(data.getDate()).padStart(2, "0");
 
-        data.setDate(data.getDate() + i);
+    const mes = String(data.getMonth() + 1).padStart(2, "0");
 
-        const dia = String(data.getDate()).padStart(2, "0");
+    const ano = data.getFullYear();
 
-        const mes = String(data.getMonth() + 1).padStart(2, "0");
+    const anoCurto = String(ano).slice(-2);
 
-        const ano = data.getFullYear();
+    const valor = `${ano}-${mes}-${dia}`;
 
-        const valor = `${ano}-${mes}-${dia}`;
+    const card = document.createElement("div");
 
-        const card = document.createElement("div");
+    card.className = "data-card selecionado";
 
-        card.className = "data-card";
+    card.innerHTML = `
 
-        card.innerHTML = `
+        <div class="dia">
 
-            <div class="dia">
+            ${diasParaSomar === 1 ? "Amanhã" : diasSemana[data.getDay()]}
 
-                ${i === 1 ? "Amanhã" : diasSemana[data.getDay()]}
+        </div>
 
-            </div>
+        <div class="data">
 
-            <div class="data">
+            ${dia}/${mes}/${anoCurto}
 
-                ${dia}/${mes}
+        </div>
 
-            </div>
+    `;
 
-        `;
+    datasContainer.appendChild(card);
 
-        card.onclick = () => {
-
-            document
-                .querySelectorAll(".data-card")
-                .forEach(c => c.classList.remove("selecionado"));
-
-            card.classList.add("selecionado");
-
-            dataSelecionada = valor;
-
-        };
-
-        datasContainer.appendChild(card);
-
-    }
-
-    if (datasContainer.firstChild) {
-        datasContainer.firstChild.click();
-    }
+    // Data fixa: não precisa clicar, já fica selecionada
+    dataSelecionada = valor;
 
 }
 
@@ -239,6 +247,9 @@ async function enviarDados() {
         return;
 
     }
+
+    // Recalcula na hora do envio (caso a página tenha ficado aberta de um dia pro outro)
+    carregarDatas();
 
     if (dataSelecionada === "") {
 
